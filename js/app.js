@@ -27,7 +27,7 @@ const reportPost = (id) => {
 };
 
 const displayContent = (text) => {
-  return text.length < 30 ? text : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
+  return text.length < 30 ? text : text.slice(0, 30) + "<a class='fw-bold text-decoration-none' onclick='readMore()'>... read more</a>";
 };
 
 const switchTab = (id) => {
@@ -35,21 +35,25 @@ const switchTab = (id) => {
     document.getElementById("posts").style.display = "grid";
     document.getElementById("liked").style.display = "none";
     document.getElementById("reported").style.display = "none";
+    // document.getElementById("bonus").style.display = "block";
   } else if (id === "liked") {
     document.getElementById("liked").style.display = "block";
     document.getElementById("posts").style.display = "none";
     document.getElementById("reported").style.display = "none";
+    // document.getElementById("bonus").style.display = "none";
 
     displayLikedPosts();
   } else {
     document.getElementById("reported").style.display = "block";
     document.getElementById("posts").style.display = "none";
     document.getElementById("liked").style.display = "none";
+    // document.getElementById("bonus").style.display = "none";
 
     displayReportedPosts();
   }
 };
 
+//function to create a post
 const createPost = (post) => {
   const image = post.image;
   const userImage = post.userImage;
@@ -121,6 +125,7 @@ const createPost = (post) => {
   return div;
 };
 
+//call with passing properties of obj
 const showPosts = (posts) => {
   const productsContainer = document.getElementById("posts");
   productsContainer.innerHTML = "";
@@ -131,6 +136,7 @@ const showPosts = (posts) => {
   });
 };
 
+//display liked posts
 const displayLikedPosts = () => {
   const likedPosts = getLikedPosts();
   document.getElementById("liked").innerHTML = "";
@@ -140,18 +146,22 @@ const displayLikedPosts = () => {
     document.getElementById("liked").appendChild(div);
 
   });
+  // document.getElementById("bonus").style.display = "none";
 };
 
+// display reported posts
 const displayReportedPosts = () => {
   document.getElementById("reported").innerHTML = "";
   const reportedPosts = getReportedPosts();
-  
+
   reportedPosts.forEach((post) => {
     const div = createPost(post);
     document.getElementById("reported").appendChild(div);
   });
+  // document.getElementById("bonus").style.display = "none";
 };
 
+//fetching data
 const loadPosts = async () => {
   let data = await fetch('../data/posts.json');
   posts = await data.json();
