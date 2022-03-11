@@ -8,7 +8,8 @@
     <title>Insta-Sohor</title>
     <link rel="stylesheet" href="./css/style.css" />
     <!-- Latest compiled and minified CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- google Montserrat  font  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -57,63 +58,70 @@
         <div id="reported">
             <h1>Reported posts</h1>
         </div>
+
     </main>
 
     <!-- Bonus section -->
-    <section id="bonus" class="container-fluid w-75 my-5">
-        <h2 class="text-center my-3">Frequently Asked Question</h2>
-        <hr class="mx-auto w-75">
-        <div class="accordion" id="accordionPanelsStayOpenExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                        aria-controls="panelsStayOpen-collapseOne">How does javascript works?
-                    </button>
-                </h2>
-                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
-                    aria-labelledby="panelsStayOpen-headingOne">
-                    <div class="accordion-body">
-                        Javascript is a scripting language. It is a client side programming language. Javascript works
-                        in both HTML file inside a<code> &lt;script&gt; </code> tag or we can use it by external .js
-                        file using <code>src</code> from a source. Javascript runs in browser by their own V8 engine
-                        which execute javascript code line by line. Every javascript engine has parser which parse
-                        javascript code line by line as I said and it is called interpreter. When parser get all code
-                        correct it send to AST (Abstract Syntax Tree). Then AST translet to machine code. When all the
-                        procedure and convertion happens then the javascript works.
+    <section class="container w-75 my-5">
+        <div id="bonus">
+            <h2 class="text-center my-3">Frequently Asked Question</h2>
+            <hr class="mx-auto w-75">
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                            aria-controls="panelsStayOpen-collapseOne">How does javascript works?
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                        aria-labelledby="panelsStayOpen-headingOne">
+                        <div class="accordion-body">
+                            Javascript is a scripting language. It is a client side programming language. Javascript
+                            works
+                            in both HTML file inside a<code> &lt;script&gt; </code> tag or we can use it by external .js
+                            file using <code>src</code> from a source. Javascript runs in browser by their own V8 engine
+                            which execute javascript code line by line. Every javascript engine has parser which parse
+                            javascript code line by line as I said and it is called interpreter. When parser get all
+                            code
+                            correct it send to AST (Abstract Syntax Tree). Then AST translet to machine code. When all
+                            the
+                            procedure and convertion happens then the javascript works.
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseTwo">What does javascript event loop do?
-                    </button>
-                </h2>
-                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
-                    aria-labelledby="panelsStayOpen-headingTwo">
-                    <div class="accordion-body">
-                        Javascript has events like synchronous and asynchronous. Event loop is related to asynchronous
-                        events. Event loop is like run the process in the background wheather another call happens or
-                        not. Let say a process encounter a 5 seconds delay execution. But javascript execute line by
-                        line. So, other code will run in background as it is and after 5 seconds the delay code will
-                        execute. So this is how javascript event loop works.
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseTwo">What does javascript event loop do?
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingTwo">
+                        <div class="accordion-body">
+                            Javascript has events like synchronous and asynchronous. Event loop is related to
+                            asynchronous
+                            events. Event loop is like run the process in the background wheather another call happens
+                            or
+                            not. Let say a process encounter a 5 seconds delay execution. But javascript execute line by
+                            line. So, other code will run in background as it is and after 5 seconds the delay code will
+                            execute. So this is how javascript event loop works.
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseThree">What is the difference between localStorage and
-                        sessionStorage?
-                    </button>
-                </h2>
-                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
-                    aria-labelledby="panelsStayOpen-headingThree">
-                    <div class="accordion-body">
-                        <table class="table table-bordered">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseThree">What is the difference between localStorage and
+                            sessionStorage?
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingThree">
+                        <div class="accordion-body">
+                            <table class="table table-bordered">
                                 <tr class="row row-cols-1 row-cols-md-2">
                                     <th class="text-center" scope="col">localStorage</th>
                                     <td class="col">localStorage is browsers local side only. It can not be accessible
@@ -129,10 +137,12 @@
                                         a session started and clear all the data when a session ends. Data stored in
                                         sessionStorage is not shared. sessionStorage can also be in attack. An attacker
                                         can easily access with a single line of code
-                                        <code>sessionStorage.getItem(secret)</code>.</td>
+                                        <code>sessionStorage.getItem(secret)</code>.
+                                    </td>
                                 </tr>
-                            
-                        </table>
+
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -140,9 +150,9 @@
     </section>
 
     <footer>
-        <section class="container my-3 p-3 bg-dark rounded-3 w-75">
+        <div class="container my-3 p-3 bg-dark rounded-3 w-75">
             <p class="text-center text-white my-auto">&copy; Rashadul Alam | Programming Hero B-5 | 2022</p>
-        </section>
+        </div>
     </footer>
 
     <!-- add javascript  file with bootstrap bundle js -->

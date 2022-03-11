@@ -27,7 +27,7 @@ const reportPost = (id) => {
 };
 
 const displayContent = (text) => {
-  return text.length < 30 ? text : text.slice(0, 30) + "<a class='fw-bold text-decoration-none' onclick='readMore()'>... read more</a>";
+  return text.length < 30 ? text : text.slice(0, 30) + "<a href='#' class='fw-bold text-decoration-none'>... read more</a>";
 };
 
 const switchTab = (id) => {
@@ -35,23 +35,32 @@ const switchTab = (id) => {
     document.getElementById("posts").style.display = "grid";
     document.getElementById("liked").style.display = "none";
     document.getElementById("reported").style.display = "none";
-    // document.getElementById("bonus").style.display = "block";
+    document.getElementById("bonus").style.display = "block";
   } else if (id === "liked") {
-    document.getElementById("liked").style.display = "block";
     document.getElementById("posts").style.display = "none";
     document.getElementById("reported").style.display = "none";
-    // document.getElementById("bonus").style.display = "none";
+    document.getElementById("bonus").style.display = "none";
+    document.getElementById("liked").style.display = "block";
 
     displayLikedPosts();
   } else {
-    document.getElementById("reported").style.display = "block";
     document.getElementById("posts").style.display = "none";
     document.getElementById("liked").style.display = "none";
-    // document.getElementById("bonus").style.display = "none";
+    document.getElementById("bonus").style.display = "none";
+    document.getElementById("reported").style.display = "block";
 
     displayReportedPosts();
   }
 };
+//try to add read more better next time
+// const readMore = (post) => {
+//   const more = post.description;
+//   const div = document.createElement("atricle");
+//   div.classList.add("post");
+//   div.innerHTML = `
+//   <span>${more}</span>`;
+//   return div;
+// };
 
 //function to create a post
 const createPost = (post) => {
@@ -139,26 +148,24 @@ const showPosts = (posts) => {
 //display liked posts
 const displayLikedPosts = () => {
   const likedPosts = getLikedPosts();
-  document.getElementById("liked").innerHTML = "";
+  // document.getElementById("liked").textContent = "";
   likedPosts.forEach((post) => {
     const div = createPost(post);
-
     document.getElementById("liked").appendChild(div);
 
   });
-  // document.getElementById("bonus").style.display = "none";
 };
 
 // display reported posts
 const displayReportedPosts = () => {
-  document.getElementById("reported").innerHTML = "";
+
+  // document.getElementById("reported").textContent = "";
   const reportedPosts = getReportedPosts();
 
   reportedPosts.forEach((post) => {
     const div = createPost(post);
     document.getElementById("reported").appendChild(div);
   });
-  // document.getElementById("bonus").style.display = "none";
 };
 
 //fetching data
